@@ -50,7 +50,7 @@ var buildfn = function(checks_file) {
 	    var out = {};
 	    for(var ii in checks) {
 		var present = $(checks[ii]).length > 0;
-		console.log("checks[ii]=%s\n", checks[ii]);
+		//console.log("checks[ii]=%s\n", checks[ii]);
 		out[checks[ii]] = present;
 	    }
 
@@ -77,7 +77,7 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     var out = {};
     for(var ii in checks) {
         var present = $(checks[ii]).length > 0;
-        console.log("checks[ii]=%s\n", checks[ii]);
+        //console.log("checks[ii]=%s\n", checks[ii]);
         out[checks[ii]] = present;
     }
     return out;
@@ -104,7 +104,7 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-l --url <URL>', 'URL to index.html')
         .parse(process.argv);
-    console.log("program.url=%s\n", program.url);
+    //console.log("program.url=%s\n", program.url);
     var checkJson;
     if(program.url != undefined) 
 	checkJson = checkURL(program.url, program.checks);
